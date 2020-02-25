@@ -1,0 +1,36 @@
+@media only screen and (max-width: 400px) {
+  .navbar {
+    margin-top: 2vh;
+    margin-right: 2vh
+  }
+  .banner {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-block-end: 5vh;
+  }
+  .title {
+    font-size: 70px !important;
+  }
+  .projectsGrid{
+    padding-left:5%;
+    padding-right:5%;
+  }
+}
+
+@media only screen and (min-width: 410px) {
+  .navbar{
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .banner{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .projectsGrid{
+    margin-top:5vh !important;
+    margin-bottom:5vh !important;
+    margin-left:15% !important;
+    margin-right:15% !important;
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {"title":"secp256k1","about":"Implementation of the signing algorithm used most commonly in bitcoin","link":"https://github.com/syahrul12345/secp256k1","website":""},
+  {"title":"Transactions","about":"Modular library to parse blockchain data such as block headers,transactions,etc","link":"https://github.com/syahrul12345/transactions","website":""},
+  {"title":"World Resume","about":"Decentralized storage and verification of blockchains on Ethereum","link":"https://github.com/syahrul12345/WorldResume","website":"https://worldresume.syahrulnizam.xyz"},
+  {"title":"Smolidays","about":"Server-side React app, coupled with a Wordpress CMS. No PHP used.","link":"https://github.com/syahrul12345/travel","website":"https://smolidays.com"}
+]
