@@ -1,7 +1,7 @@
 version: '3'
 services:
-  webframework:
-    container_name: webframework
+  portfolio:
+    container_name: portfolio
     build: .
     environment: 
       - is_production=true
