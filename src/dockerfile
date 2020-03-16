@@ -3,7 +3,6 @@ FROM golang:alpine as stage1
 WORKDIR /app
 COPY ./go.mod ./
 RUN go mod download
-COPY ./.env ./
 COPY ./main.go ./
 COPY ./controller ./controller
 COPY ./utils ./utils

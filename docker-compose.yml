@@ -2,7 +2,8 @@ version: '3'
 services:
   portfolio:
     container_name: portfolio
-    build: .
+    image: 'syahrul12345/portfolio'
+    build: ./src
     environment:
       - port=${port} 
       - is_production=true
