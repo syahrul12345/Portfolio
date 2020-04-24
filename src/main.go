@@ -2,13 +2,11 @@ package main
 
 import (
 	"log"
-	"net/http"
 	"os"
-	"strconv"
-	"webframework/controller"
 
+	"github.com/gin-gonic/contrib/static"
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/rs/cors"
 )
 
 func main() {
@@ -24,24 +22,21 @@ func main() {
 		}
 
 	}
-	// Create the Webserver
-	mux := http.NewServeMux()
-	// Define rest endpoints
-	mux.HandleFunc("/", controller.Serve)
-	// cors.Default() setup the middleware with default options being
-	// all origins accepted with simple methods (GET, POST). See
-	// documentation below for more options.
-	// Allow the default testing port for CORS
-	prod, _ := strconv.ParseBool(os.Getenv("is_production"))
-	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://127.0.0.1:8080"},
-		AllowCredentials: true,
-		// Enable Debugging for testing, consider disabling in production
-		Debug: !prod,
-	})
-	handler := c.Handler(mux)
-	// Get port from env file
+	app := gin.Default()
+	prod := os.Getenv("is_production")
 	port := os.Getenv("port")
+
+	if prod == "false" || prod == "" {
+		// Build folder will be in the /apps/website/build.
+		// We will build using a multistage docker build which will send the html files to this folder
+		log.Println("Non-production build")
+		app.Use(static.Serve("/", static.LocalFile("./website/build", true)))
+	} else {
+		// Non docker build, use the build outside of the folder. This will be in alpine linux
+		log.Println("Production build")
+		app.Use(static.Serve("/", static.LocalFile("./build", true)))
+	}
+
 	log.Printf("Webserver is on http://127.0.0.1:%s\n", port)
-	http.ListenAndServe(":"+port, handler)
+	app.Run(":" + port)
 }

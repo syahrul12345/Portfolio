@@ -24,7 +24,7 @@ export default function Banner(props) {
           marginTop:'1vh',
           fontWeight:'400'
         }} 
-        variant="h5"> I'm a full stack developer with a keen interest in Blockchain & DevOps.</Typography>
+        variant="h5"> I'm a Software Engineer with a keen interest in Blockchain & DevOps.</Typography>
         <Typography
         style={{
           marginTop:'1vh'

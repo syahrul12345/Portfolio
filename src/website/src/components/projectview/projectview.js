@@ -1,38 +1,28 @@
 import React from 'react'
-import { Grid, Card, CardContent, Typography } from '@material-ui/core'
+import { Grid, Card, CardContent, Typography, Button } from '@material-ui/core'
 import projects from '../../projects.json'
 
 const CustomCard = (props) => {
   const { project } = props
   return(
     <Card elevation={3}>
-      <CardContent>
+      <CardContent style={{paddingBottom:'5px'}}>
         <Typography variant="h4" style={{marginBottom:'8px',fontWeight:'600'}}>{project.title}</Typography>
-        <Typography variant="subtitle1" style={{color:'rgb(153,153,153)'}}>{project.about}</Typography>
-        <Grid container justify="space-between" direction="row">
+        <Typography variant="subtitle1" style={{color:'rgb(153,153,153)',minHeight: '70px'}}>{project.about}</Typography>
+        <Grid container justify="space-between" style={{paddingBottom:'-5vh'}}direction="row">
           <Grid item xs={2}>
-              <Typography variant="subtitle2" style={{color:'rgb(153,153,153)'}}>
-              <a 
-              style={{textDecoration:'none'}}
-              href={project.link}>Github</a>
-            </Typography>
+              <Button color="white" href={project.link}> Github</Button>
           </Grid>
           {project.website !== "" ? 
             (<Grid 
             item 
             xs={2}>
-              <Typography variant="subtitle2" style={{color:'rgb(153,153,153)',textAlign:'right'}}>
-                <a 
-                style={{textDecoration:'none'}}
-                href={project.website}>Try it</a>
-              </Typography>
+              <Button color="white" href={project.website} > Try it </Button>
             </Grid>)
             :
             (<></>)
           }
-          
         </Grid>
-        
       </CardContent>
     </Card>
   )

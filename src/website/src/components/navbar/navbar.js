@@ -29,7 +29,7 @@ export default function NavBar(props) {
         )
       })}
 
-      <Button variant="contained" color="primary" href="//github.com/syahrul12345"> Github </Button>
+      <Button style={{marginLeft:'1vh'}} variant="contained" color="primary" href="//github.com/syahrul12345"> Github </Button>
     </Grid>
   )
 }

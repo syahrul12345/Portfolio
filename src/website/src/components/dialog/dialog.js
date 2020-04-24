@@ -54,7 +54,7 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="text" color="primary" onClick={handleClickOpen}>
+      <Button variant="text" color="white" onClick={handleClickOpen}>
         <Typography variant="body1">
           { data.title }
         </Typography>
