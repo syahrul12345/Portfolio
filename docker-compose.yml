@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 services:
   portfolio:
     container_name: portfolio
-    image: 'syahrul12345/portfolio'
+    image: "syahrul12345/portfolio"
     build: ./src
     environment:
-      - port=${port} 
+      - port=8888
       - is_production=true
-    ports: 
-      - ${port}:${port}
+    ports:
+      - 8888:8888
