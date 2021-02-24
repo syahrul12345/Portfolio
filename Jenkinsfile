@@ -6,8 +6,7 @@ pipeline {
             steps {
             //   when { tag "release-*" }
               withEnv(["PATH=$PATH:~/.local/bin"]){
-                sh "chmod +x ./build.sh"
-                sh "./build.sh"
+                sh "make up"
               }
             }
         }
